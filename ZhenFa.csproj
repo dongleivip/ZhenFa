@@ -16,6 +16,11 @@
   </ItemGroup>
 
   <ItemGroup>
+   <!-- DotNet Watch Tools -->
+   <DotNetCliToolReference Include="Microsoft.DotNet.Watcher.Tools" Version="1.0.0" />
+ </ItemGroup>
+
+  <ItemGroup>
     <!-- Files not to publish (note that the 'dist' subfolders are re-added below) -->
     <Content Remove="ClientApp\**" />
   </ItemGroup>
