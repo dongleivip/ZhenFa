@@ -11,7 +11,11 @@ For Mac or Linux
 
 
 
-## Some dotnet commands
+## Some dotnet commandso
+
+### Package Management
+- dotnet add package [package name]
+- dotnet restore 
 
 ### Vs IDE
 
@@ -20,6 +24,7 @@ For Mac or Linux
 
 ### CLI
 
-- dotnet ef migrations [migrations name]
+- dotnet ef migrations add [migrations name]
 - dotnet ef migrations remove
 - dotnet ef database update  # applay the migration to the database
+- dotnet ef database update [migration name]  # apply a specfic version of migration

@@ -11,9 +11,10 @@ using ZhenFa.Persistence;
 namespace ZhenFa.Migrations
 {
     [DbContext(typeof(ZhenFaDbContext))]
-    partial class ZhenFaDbContextModelSnapshot : ModelSnapshot
+    [Migration("20180630075250_ApplyConstaints")]
+    partial class ApplyConstaints
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -52,8 +53,7 @@ namespace ZhenFa.Migrations
                         .IsRequired()
                         .HasMaxLength(255);
 
-                    b.Property<DateTime>("OrderDate")
-                        .HasColumnType("Date");
+                    b.Property<DateTime>("OrderDate");
 
                     b.HasKey("Id");
 

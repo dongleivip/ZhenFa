@@ -11,9 +11,10 @@ using ZhenFa.Persistence;
 namespace ZhenFa.Migrations
 {
     [DbContext(typeof(ZhenFaDbContext))]
-    partial class ZhenFaDbContextModelSnapshot : ModelSnapshot
+    [Migration("20180630084617_UpdateOrderDateType")]
+    partial class UpdateOrderDateType
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
