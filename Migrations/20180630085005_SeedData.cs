@@ -6,9 +6,9 @@ namespace ZhenFa.Migrations
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.Sql("INSERT INTO \"Orders\" (\"Customer\", \"OrderDate\") VALUES ('测试', '2018-01-01');");
+            migrationBuilder.Sql("INSERT INTO \"Orders\" (\"Customer\", \"OrderDate\") VALUES ('测试-dev', '2018-01-01');");
 
-            var selectOrderId = "(SELECT \"Id\" FROM \"Orders\" WHERE \"Customer\" = '测试')";
+            var selectOrderId = "(SELECT \"Id\" FROM \"Orders\" WHERE \"Customer\" = '测试-dev')";
 
             migrationBuilder.Sql($"INSERT INTO \"Items\" (\"Name\", \"Count\", \"Specs\", \"OrderId\") VALUES ('测试-Item-1', '1', '规格-1', {selectOrderId});");
             migrationBuilder.Sql($"INSERT INTO \"Items\" (\"Name\", \"Count\", \"Specs\", \"OrderId\") VALUES ('测试-Item-2', '2', '规格-1', {selectOrderId});");
@@ -17,7 +17,7 @@ namespace ZhenFa.Migrations
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.Sql("DELETE FROM \"Orders\"");
+            migrationBuilder.Sql("DELETE FROM \"Orders\" WHERE \"Customer\" = '测试-dev'");
         }
     }
 }
