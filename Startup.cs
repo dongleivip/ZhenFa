@@ -1,3 +1,4 @@
+using AutoMapper;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.SpaServices.Webpack;
@@ -21,9 +22,9 @@ namespace ZhenFa
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            var connStr = Configuration.GetConnectionString("Postgres");
+            services.AddAutoMapper();
 
-            services.AddDbContext<ZhenFaDbContext>(options => options.UseNpgsql(connStr));
+            services.AddDbContext<ZhenFaDbContext>(options => options.UseNpgsql(Configuration.GetConnectionString("Postgres")));
 
             services.AddMvc();
         }
