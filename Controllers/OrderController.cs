@@ -28,5 +28,11 @@ namespace ZhenFa.Controllers
 
             return _mapper.Map<List<Order>, List<OrderResource>>(orders);
         }
+
+        [HttpPost("api/orders/new")]
+        public void CreateOrder([FromForm]Order order)
+        {
+            var name = order.Customer;
+        }
     }
 }
